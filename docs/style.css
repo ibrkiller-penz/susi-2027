@@ -1,0 +1,150 @@
+:root {
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --accent-weak: #eff6ff;
+  --header-bg: #111827;
+  --header-text: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --surface: #171a21;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #2a2e37;
+    --accent: #60a5fa;
+    --accent-weak: #1e293b;
+    --header-bg: #0b0d11;
+    --header-text: #f3f4f6;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Noto Sans KR", "Malgun Gothic", sans-serif;
+  padding-bottom: 40px;
+}
+
+.topbar {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 20px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.topbar h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.updated-at {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.controls input,
+.controls select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.summary {
+  max-width: 1100px;
+  margin: 0 auto 8px;
+  padding: 0 16px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.88rem;
+  min-width: 640px;
+}
+
+thead th {
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--accent-weak);
+  color: var(--text);
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+tbody tr:hover {
+  background: var(--accent-weak);
+}
+
+.ratio-cell {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px 0;
+}
+
+footer {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  padding: 0 16px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 480px) {
+  .controls { padding: 12px; }
+  main { padding: 0 12px; }
+}
