@@ -16,5 +16,32 @@
     "type": "4년제",
     "scraper": "jinhak_addon",
     "params": { "ratio_id": "10091341" }
+  },
+  {
+    "id": "hanyang-seoul",
+    "name": "한양대학교",
+    "campus": "서울",
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": { "ratio_id": "11640591" }
+  },
+  {
+    "id": "hongik-seoul",
+    "name": "홍익대학교",
+    "campus": "서울",
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": { "ratio_id": "11720891" }
+  },
+  {
+    "id": "dongguk-seoul",
+    "name": "동국대학교",
+    "campus": "서울",
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": { "ratio_id": "10550541" }
   }
 ]
