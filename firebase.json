@@ -19,6 +19,11 @@
       "target": "susi2029",
       "public": "docs",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "susi2030",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
     }
   ]
 }
