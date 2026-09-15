@@ -12,42 +12,67 @@
   <div class="updated-at" id="updatedAt">불러오는 중...</div>
 </header>
 
-<section class="controls">
-  <input type="search" id="searchInput" placeholder="대학명 / 모집단위 검색">
-  <select id="regionFilter"><option value="">전체 지역</option></select>
-  <select id="typeFilter">
-    <option value="">전체 유형</option>
-    <option value="4년제">4년제</option>
-    <option value="전문대">전문대</option>
-  </select>
-  <select id="sortSelect">
-    <option value="ratio-desc">경쟁률 높은 순</option>
-    <option value="ratio-asc">경쟁률 낮은 순</option>
-    <option value="applicants-desc">지원인원 많은 순</option>
-    <option value="university">대학명순</option>
-  </select>
+<!-- 대학 목록 화면 -->
+<section id="listView">
+  <section class="controls">
+    <input type="search" id="searchInput" placeholder="대학명 검색">
+    <select id="regionFilter"><option value="">전체 지역</option></select>
+    <select id="typeFilter">
+      <option value="">전체 유형</option>
+      <option value="4년제">4년제</option>
+      <option value="전문대">전문대</option>
+    </select>
+    <select id="sortSelect">
+      <option value="ratio-desc">최고 경쟁률 높은 순</option>
+      <option value="ratio-asc">최고 경쟁률 낮은 순</option>
+      <option value="applicants-desc">총 지원인원 많은 순</option>
+      <option value="university">대학명순</option>
+    </select>
+  </section>
+
+  <section class="summary" id="summary"></section>
+
+  <main>
+    <div class="univ-grid" id="univGrid"></div>
+    <p id="emptyState" class="empty-state" hidden>표시할 데이터가 없습니다.</p>
+  </main>
 </section>
 
-<section class="summary" id="summary"></section>
+<!-- 대학 상세(전형별) 화면 -->
+<section id="detailView" hidden>
+  <div class="detail-header">
+    <button id="backBtn" class="back-btn">← 목록으로</button>
+    <div class="detail-title">
+      <h2 id="detailTitle"></h2>
+      <a id="detailSource" href="#" target="_blank" rel="noopener">원본 페이지에서 확인 →</a>
+    </div>
+  </div>
 
-<main>
-  <table id="ratioTable">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>대학</th>
-        <th>캠퍼스</th>
-        <th>전형</th>
-        <th>모집단위</th>
-        <th>모집</th>
-        <th>지원</th>
-        <th>경쟁률</th>
-      </tr>
-    </thead>
-    <tbody id="tableBody"></tbody>
-  </table>
-  <p id="emptyState" class="empty-state" hidden>표시할 데이터가 없습니다.</p>
-</main>
+  <section class="controls">
+    <input type="search" id="deptSearchInput" placeholder="전형 / 모집단위 검색">
+    <select id="deptSortSelect">
+      <option value="ratio-desc">경쟁률 높은 순</option>
+      <option value="ratio-asc">경쟁률 낮은 순</option>
+      <option value="applicants-desc">지원인원 많은 순</option>
+    </select>
+  </section>
+
+  <main>
+    <table id="ratioTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>전형</th>
+          <th>모집단위</th>
+          <th>모집</th>
+          <th>지원</th>
+          <th>경쟁률</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </main>
+</section>
 
 <footer>
   <p>데이터 출처: 각 대학 입학처 공개 경쟁률 페이지 (진학어플라이 부가서비스 등). 참고용이며 최종 수치는 반드시 각 대학 공식 발표를 확인하세요.</p>
