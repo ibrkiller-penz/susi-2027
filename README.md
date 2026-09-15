@@ -10,8 +10,11 @@
 3. `docs/data.json` 으로 결과를 합쳐 저장하고
 4. `docs/` (GitHub Pages 루트)의 정적 대시보드가 그 JSON을 읽어 화면에 표로 보여준다.
 
-GitHub Actions(`.github/workflows/update.yml`)가 20분마다 2번 과정을 자동 실행해서 `docs/data.json`을 갱신하고
-커밋 → Pages가 자동으로 최신 데이터를 서빙한다.
+갱신은 자동 주기 실행이 아니라 **수동 버튼**으로만 한다 — GitHub 저장소의 Actions 탭 →
+"Update ratio data" → **Run workflow** 버튼을 누르면 2번 과정이 실행되어 `docs/data.json`을 갱신하고
+커밋한다. (`gh workflow run "Update ratio data"` 로 터미널에서 눌러도 된다.) GitHub Pages는 그 커밋을
+자동으로 반영하지만, Firebase Hosting 쪽은 별도로 `npx firebase-tools deploy --only hosting --project susi-3c093`를
+로컬에서 한 번 더 실행해야 최신 데이터가 올라간다.
 
 ## 데이터 소스에 대해 알아둘 것
 
