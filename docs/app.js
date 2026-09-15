@@ -16,11 +16,11 @@ const els = {
   listView: document.getElementById("listView"),
   detailView: document.getElementById("detailView"),
   searchInput: document.getElementById("searchInput"),
-  regionFilter: document.getElementById("regionFilter"),
-  typeFilter: document.getElementById("typeFilter"),
+  typePills: document.getElementById("typePills"),
+  regionPills: document.getElementById("regionPills"),
   sortSelect: document.getElementById("sortSelect"),
   summary: document.getElementById("summary"),
-  univGrid: document.getElementById("univGrid"),
+  univSections: document.getElementById("univSections"),
   emptyState: document.getElementById("emptyState"),
   backBtn: document.getElementById("backBtn"),
   detailTitle: document.getElementById("detailTitle"),
@@ -42,7 +42,6 @@ async function loadData() {
     state.records = payload.records || [];
     buildUniversities();
     renderMeta(payload);
-    populateRegionOptions();
     render();
   } catch (err) {
     els.updatedAt.textContent = "데이터를 불러오지 못했습니다.";
@@ -84,16 +83,6 @@ function renderMeta(payload) {
   els.updatedAt.textContent = `업데이트: ${updated} · 대학 ${payload.university_count ?? 0}곳 · ${payload.record_count ?? 0}개 모집단위`;
 }
 
-function populateRegionOptions() {
-  const regions = Array.from(new Set(state.universities.map((u) => u.region).filter(Boolean))).sort();
-  for (const region of regions) {
-    const opt = document.createElement("option");
-    opt.value = region;
-    opt.textContent = region;
-    els.regionFilter.appendChild(opt);
-  }
-}
-
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -102,17 +91,23 @@ function escapeHtml(str) {
 
 /* ---------- 목록 화면 ---------- */
 
-function getFilteredUniversities() {
+// 검색어만 반영한 목록 (지역/유형 pill의 개수 표시는 서로의 선택을 반영하지 않고
+// 항상 "검색어 기준 전체"에서 세므로, pill을 눌러도 다른 pill 개수가 안 튀지 않는다)
+function getSearchedUniversities() {
   const q = state.search.trim().toLowerCase();
-  return state.universities.filter((u) => {
+  if (!q) return state.universities;
+  return state.universities.filter((u) => u.university.toLowerCase().includes(q));
+}
+
+function getFilteredUniversities() {
+  return getSearchedUniversities().filter((u) => {
     if (state.region && u.region !== state.region) return false;
     if (state.type && u.univ_type !== state.type) return false;
-    if (q && !u.university.toLowerCase().includes(q)) return false;
     return true;
   });
 }
 
-function getSortedUniversities(list) {
+function sortUniversities(list) {
   const sorted = [...list];
   switch (state.sort) {
     case "ratio-asc":
@@ -132,37 +127,101 @@ function getSortedUniversities(list) {
   return sorted;
 }
 
+function renderPills() {
+  const searched = getSearchedUniversities();
+
+  const typeCounts = new Map();
+  for (const u of searched) {
+    if (state.region && u.region !== state.region) continue;
+    typeCounts.set(u.univ_type, (typeCounts.get(u.univ_type) || 0) + 1);
+  }
+  const typeTotal = [...typeCounts.values()].reduce((a, b) => a + b, 0);
+  const typeList = [["", "전체", typeTotal], ...Array.from(typeCounts, ([k, v]) => [k, k || "기타", v])];
+  renderPillGroup(els.typePills, typeList, state.type, (val) => { state.type = val; render(); });
+
+  const regionCounts = new Map();
+  for (const u of searched) {
+    if (state.type && u.univ_type !== state.type) continue;
+    regionCounts.set(u.region, (regionCounts.get(u.region) || 0) + 1);
+  }
+  const regionTotal = [...regionCounts.values()].reduce((a, b) => a + b, 0);
+  const regionEntries = Array.from(regionCounts, ([k, v]) => [k, k || "기타", v])
+    .sort((a, b) => b[2] - a[2]);
+  const regionList = [["", "전체 지역", regionTotal], ...regionEntries];
+  renderPillGroup(els.regionPills, regionList, state.region, (val) => { state.region = val; render(); });
+}
+
+function renderPillGroup(container, entries, activeVal, onPick) {
+  container.innerHTML = "";
+  const frag = document.createDocumentFragment();
+  entries.forEach(([val, label, count]) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pill" + (val === activeVal ? " active" : "");
+    btn.textContent = `${label} ${count}`;
+    btn.addEventListener("click", () => onPick(val));
+    frag.appendChild(btn);
+  });
+  container.appendChild(frag);
+}
+
 function renderList() {
-  const filtered = getSortedUniversities(getFilteredUniversities());
+  renderPills();
+
+  const filtered = getFilteredUniversities();
   els.summary.textContent = `표시 중: ${filtered.length}개 대학(캠퍼스)`;
-  els.univGrid.innerHTML = "";
+  els.univSections.innerHTML = "";
   els.emptyState.hidden = filtered.length > 0;
 
+  // 특정 지역을 골랐으면 섹션 하나, "전체"면 지역별 섹션으로 묶어서 원본 사이트처럼 보여준다.
+  const groups = new Map();
+  for (const u of filtered) {
+    const groupKey = state.region ? state.region : (u.region || "기타");
+    if (!groups.has(groupKey)) groups.set(groupKey, []);
+    groups.get(groupKey).push(u);
+  }
+  const groupOrder = Array.from(groups.entries()).sort((a, b) => b[1].length - a[1].length);
+
   const frag = document.createDocumentFragment();
-  filtered.forEach((u) => {
-    const card = document.createElement("article");
-    card.className = "univ-card";
-    card.tabIndex = 0;
-    card.innerHTML = `
-      <div class="univ-card-top">
-        <h3>${escapeHtml(u.university)}${u.campus ? `<span class="campus-badge">${escapeHtml(u.campus)}</span>` : ""}</h3>
-        <span class="ratio-cell">${u.maxRatio.toFixed(2)} : 1<small> 최고</small></span>
-      </div>
-      <div class="univ-card-meta">
-        <span>${escapeHtml(u.region || "-")}</span>
-        <span>${escapeHtml(u.univ_type || "-")}</span>
-        <span>${u.deptCount}개 모집단위</span>
-        <span>지원 ${u.totalApplicants.toLocaleString("ko-KR")}명</span>
-      </div>
-      <a class="source-link" href="${escapeHtml(u.source_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 페이지 →</a>
-    `;
-    card.addEventListener("click", () => openDetail(u.key));
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") openDetail(u.key);
-    });
-    frag.appendChild(card);
+  for (const [regionName, list] of groupOrder) {
+    const section = document.createElement("section");
+    section.className = "region-section";
+    const header = document.createElement("h2");
+    header.className = "region-heading";
+    header.innerHTML = `${escapeHtml(regionName)} <span>${list.length}개</span>`;
+    section.appendChild(header);
+
+    const grid = document.createElement("div");
+    grid.className = "univ-grid";
+    sortUniversities(list).forEach((u) => grid.appendChild(buildUnivCard(u)));
+    section.appendChild(grid);
+
+    frag.appendChild(section);
+  }
+  els.univSections.appendChild(frag);
+}
+
+function buildUnivCard(u) {
+  const card = document.createElement("article");
+  card.className = "univ-card";
+  card.tabIndex = 0;
+  card.innerHTML = `
+    <div class="univ-card-top">
+      <h3>${escapeHtml(u.university)}${u.campus ? `<span class="campus-badge">${escapeHtml(u.campus)}</span>` : ""}</h3>
+      <span class="ratio-cell">${u.maxRatio.toFixed(2)} : 1<small> 최고</small></span>
+    </div>
+    <div class="univ-card-meta">
+      <span>${escapeHtml(u.univ_type || "-")}</span>
+      <span>${u.deptCount}개 모집단위</span>
+      <span>지원 ${u.totalApplicants.toLocaleString("ko-KR")}명</span>
+    </div>
+    <a class="source-link" href="${escapeHtml(u.source_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 페이지 →</a>
+  `;
+  card.addEventListener("click", () => openDetail(u.key));
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") openDetail(u.key);
   });
-  els.univGrid.appendChild(frag);
+  return card;
 }
 
 /* ---------- 상세 화면 ---------- */
@@ -244,8 +303,6 @@ function render() {
 }
 
 els.searchInput.addEventListener("input", (e) => { state.search = e.target.value; render(); });
-els.regionFilter.addEventListener("change", (e) => { state.region = e.target.value; render(); });
-els.typeFilter.addEventListener("change", (e) => { state.type = e.target.value; render(); });
 els.sortSelect.addEventListener("change", (e) => { state.sort = e.target.value; render(); });
 els.backBtn.addEventListener("click", closeDetail);
 els.deptSearchInput.addEventListener("input", (e) => { state.deptSearch = e.target.value; renderDetail(); });

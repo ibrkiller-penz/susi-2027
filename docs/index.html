@@ -16,12 +16,6 @@
 <section id="listView">
   <section class="controls">
     <input type="search" id="searchInput" placeholder="대학명 검색">
-    <select id="regionFilter"><option value="">전체 지역</option></select>
-    <select id="typeFilter">
-      <option value="">전체 유형</option>
-      <option value="4년제">4년제</option>
-      <option value="전문대">전문대</option>
-    </select>
     <select id="sortSelect">
       <option value="ratio-desc">최고 경쟁률 높은 순</option>
       <option value="ratio-asc">최고 경쟁률 낮은 순</option>
@@ -30,10 +24,13 @@
     </select>
   </section>
 
+  <div class="pill-row" id="typePills"></div>
+  <div class="pill-row" id="regionPills"></div>
+
   <section class="summary" id="summary"></section>
 
   <main>
-    <div class="univ-grid" id="univGrid"></div>
+    <div id="univSections"></div>
     <p id="emptyState" class="empty-state" hidden>표시할 데이터가 없습니다.</p>
   </main>
 </section>

@@ -136,6 +136,56 @@ tbody tr:hover {
   padding: 40px 0;
 }
 
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px 10px;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.pill.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.region-section {
+  margin-bottom: 22px;
+}
+
+.region-heading {
+  font-size: 0.95rem;
+  margin: 0 0 10px;
+  color: var(--text);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.region-heading span {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
 .univ-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
