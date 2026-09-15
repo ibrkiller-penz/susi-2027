@@ -24,6 +24,16 @@
       "target": "susi2030",
       "public": "docs",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "susi2031",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "susi2032",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
     }
   ]
 }
