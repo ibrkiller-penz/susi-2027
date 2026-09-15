@@ -1,0 +1,24 @@
+{
+  "hosting": [
+    {
+      "target": "susi2027",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "susi2028",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "susihy2028",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "susi2029",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    }
+  ]
+}

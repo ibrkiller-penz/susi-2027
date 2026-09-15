@@ -67,55 +67,105 @@ def fetch_html(ratio_id: str, timeout: int = 15) -> str:
     return resp.text
 
 
+_HEADING_SUFFIX_RE = re.compile(r"경쟁률\s*현황$")
+
+
+def _heading_admission_type(table) -> str:
+    """표 앞의 <h2>학생부교과(추천형)경쟁률 현황</h2> 같은 제목에서 전형명을 뽑는다.
+    전형 컬럼이 표 자체에 없는 대학(예: 한양대, 성균관대)에 필요하다.
+    """
+    node = table.find_previous_sibling()
+    seen = 0
+    while node is not None and seen < 3:
+        text = node.get_text(strip=True)
+        if text and _HEADING_SUFFIX_RE.search(text):
+            return _HEADING_SUFFIX_RE.sub("", text).strip()
+        if node.name == "table":
+            break
+        node = node.find_previous_sibling()
+        seen += 1
+    return ""
+
+
+def _is_detail_table(headers: list[str]) -> bool:
+    header_text = " ".join(headers)
+    if "모집단위" not in header_text:
+        return False
+    if not any(k in header_text for k in ("모집인원", "모집")):
+        return False
+    if not any(k in header_text for k in ("지원인원", "지원")):
+        return False
+    return "경쟁률" in header_text
+
+
 def parse(html: str, university: str, ratio_id: str, campus: Optional[str] = None) -> list[RatioRecord]:
+    """대학마다 표 컬럼 구성이 다르다 (예: 건국대 전형/대학/모집단위 6열,
+    한양대 대학/모집단위 5열 + 전형은 표 위 <h2> 제목, 서강대 모집단위/접수단위 5열,
+    성균관대 모집단위 4열만). 컬럼 이름을 직접 읽어서 위치를 판단하므로
+    대학별 분기 없이 이 로직 하나로 처리한다.
+    """
     soup = BeautifulSoup(html, "html.parser")
     source_url = f"https://addon.jinhakapply.com/RatioV1/RatioH/Ratio{ratio_id}.html"
     records: list[RatioRecord] = []
 
     for table in soup.find_all("table"):
-        header_cells = [th.get_text(strip=True) for th in table.find_all(["th"])]
-        header_text = " ".join(header_cells)
-        # 상세표는 "대학"과 "모집단위" 컬럼을 함께 가진다.
-        if "모집단위" not in header_text or "대학" not in header_text:
+        rows = table.find_all("tr")
+        if not rows:
+            continue
+        headers = [th.get_text(strip=True) for th in rows[0].find_all("th")]
+        if not _is_detail_table(headers):
             continue
 
-        current_admission_type = None
-        current_college = None
+        # 마지막 3개 컬럼은 항상 모집인원/지원인원/경쟁률이고, 그 앞쪽
+        # (lead_headers)이 전형/대학/모집단위/접수단위 조합이다.
+        lead_headers = headers[:-3]
 
-        for row in table.find_all("tr"):
+        dept_idx: Optional[int]
+        college_idx: Optional[int]
+        if "접수단위" in lead_headers:
+            dept_idx = lead_headers.index("접수단위")
+            college_idx = lead_headers.index("모집단위") if "모집단위" in lead_headers else None
+        elif "모집단위" in lead_headers:
+            dept_idx = lead_headers.index("모집단위")
+            college_idx = lead_headers.index("대학") if "대학" in lead_headers else None
+        else:
+            dept_idx = None
+            college_idx = None
+        type_idx = lead_headers.index("전형") if "전형" in lead_headers else None
+
+        heading_type = "" if type_idx is not None else _heading_admission_type(table)
+
+        # rowspan으로 생략된 왼쪽 컬럼을 직전 행 값으로 채우기 위한 캐시.
+        sticky: list[Optional[str]] = [None] * len(lead_headers)
+
+        for row in rows[1:]:
             cells = row.find_all("td")
             if not cells:
                 continue
-            cell_text = [c.get_text(strip=True) for c in cells]
-
-            # 총계 행은 스킵 (rowspan 첫 컬럼이 "총계"인 경우 포함)
-            if any(t.startswith("총계") for t in cell_text):
+            vals = [c.get_text(strip=True) for c in cells]
+            if any(v.startswith("총계") for v in vals):
+                continue
+            if len(vals) < 3:
                 continue
 
-            # rowspan으로 생략된 컬럼(전형/대학)을 보정하기 위해
-            # 컬럼 수가 6개(전형,대학,모집단위,모집,지원,경쟁률)가 아니면
-            # 앞에서부터 누락된 컬럼을 이전 값으로 채운다.
-            n = len(cell_text)
-            if n == 6:
-                admission_type, college, dept, cap, app, ratio = cell_text
-                current_admission_type, current_college = admission_type, college
-            elif n == 5:
-                # 전형 또는 대학 하나가 rowspan으로 생략된 경우
-                # 대학이 생략됐다고 가정 (같은 대학 내 다음 모집단위)
-                college, dept, cap, app, ratio = cell_text
-                admission_type = current_admission_type
-                current_college = college
-            elif n == 4:
-                dept, cap, app, ratio = cell_text
-                admission_type = current_admission_type
-                college = current_college
-            else:
+            cap_s, app_s, ratio_s = vals[-3], vals[-2], vals[-1]
+            lead_vals = vals[:-3]
+            offset = len(lead_headers) - len(lead_vals)
+            if offset < 0:
                 continue
+            sticky[offset:] = lead_vals
+            full_lead = sticky[:]
 
-            capacity = _to_int(cap)
-            applicants = _to_int(app)
-            ratio_val = _to_ratio(ratio)
-            if capacity is None or not dept:
+            dept = full_lead[dept_idx] if dept_idx is not None else None
+            if not dept:
+                continue
+            college = full_lead[college_idx] if college_idx is not None else None
+            admission_type = full_lead[type_idx] if type_idx is not None else heading_type
+
+            capacity = _to_int(cap_s)
+            applicants = _to_int(app_s)
+            ratio_val = _to_ratio(ratio_s)
+            if capacity is None:
                 continue
             if applicants is None:
                 applicants = 0

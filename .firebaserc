@@ -1,0 +1,24 @@
+{
+  "projects": {
+    "default": "susi-3c093"
+  },
+  "targets": {
+    "susi-3c093": {
+      "hosting": {
+        "susi2027": [
+          "2027susi"
+        ],
+        "susi2029": [
+          "2029susi"
+        ],
+        "susi2028": [
+          "2028susi"
+        ],
+        "susihy2028": [
+          "susi-2028"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
