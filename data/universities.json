@@ -592,5 +592,1908 @@
     "params": {
       "url": "https://ratio.uwayapply.com/Sl5KVzhNYU5ifEpmQ0NhTEo3ZlRm"
     }
+  },
+  {
+    "id": "unist",
+    "name": "UNIST(울산과학기술원)",
+    "campus": null,
+    "region": "울산",
+    "type": "특수대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KMCYlVzpKXiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-55",
+    "name": "가야대학교",
+    "campus": null,
+    "region": "경남",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10010711"
+    }
+  },
+  {
+    "id": "school-56",
+    "name": "가천대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10190711"
+    }
+  },
+  {
+    "id": "school-57",
+    "name": "가톨릭관동대학교",
+    "campus": null,
+    "region": "강원",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOjlMSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-58",
+    "name": "가톨릭꽃동네대학교",
+    "campus": null,
+    "region": "충북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KMGE5OUpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-59",
+    "name": "가톨릭대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10030381"
+    }
+  },
+  {
+    "id": "school-60",
+    "name": "감리교신학대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KJjBNSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-61",
+    "name": "강남대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTThXclc4OUpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-62",
+    "name": "강서대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10360791"
+    }
+  },
+  {
+    "id": "school-63",
+    "name": "강원대학교",
+    "campus": null,
+    "region": "강원",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KV2FOclc4OUpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-64",
+    "name": "건국대학교(서울)",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10080381"
+    }
+  },
+  {
+    "id": "school-65",
+    "name": "건양대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10100811"
+    }
+  },
+  {
+    "id": "school-66",
+    "name": "경기대학교",
+    "campus": null,
+    "region": "경기·서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KJXJyV2FiOUpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-67",
+    "name": "경남대학교",
+    "campus": null,
+    "region": "경남",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10130591"
+    }
+  },
+  {
+    "id": "school-68",
+    "name": "경동대학교",
+    "campus": null,
+    "region": "강원",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KRCVXOlY5SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-69",
+    "name": "경북대학교",
+    "campus": null,
+    "region": "대구",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOlc5SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-70",
+    "name": "경상국립대학교",
+    "campus": null,
+    "region": "경남",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10171011"
+    }
+  },
+  {
+    "id": "school-71",
+    "name": "경성대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KJjlKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-72",
+    "name": "경인교육대학교",
+    "campus": null,
+    "region": "인천",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "20060251"
+    }
+  },
+  {
+    "id": "school-73",
+    "name": "경희대학교",
+    "campus": null,
+    "region": "서울·경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOnw5SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-74",
+    "name": "계명대학교",
+    "campus": null,
+    "region": "대구",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOk05SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-75",
+    "name": "고려대학교(세종)",
+    "campus": null,
+    "region": "세종",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KcldhL2AmOzhgfWE5SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-76",
+    "name": "고려대학교(안암)",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOGB9YTlKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-77",
+    "name": "고신대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVyUmYTlKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-78",
+    "name": "공주교육대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KYDY6L3JXYTlKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-79",
+    "name": "광운대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTjlKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-80",
+    "name": "광주과학기술원(GIST)",
+    "campus": null,
+    "region": "전남광주",
+    "type": "특수대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KbzBlbyZlbyVlb3JlSl4lJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-81",
+    "name": "광주교육대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KYDY6L3JXOE45SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-82",
+    "name": "광주대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOi9yVzhOckpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-83",
+    "name": "광주여자대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOk45SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-84",
+    "name": "국립경국대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KcldhVlc4SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-85",
+    "name": "국립공주대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10281081"
+    }
+  },
+  {
+    "id": "school-86",
+    "name": "국립군산대학교",
+    "campus": null,
+    "region": "전북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10350611"
+    }
+  },
+  {
+    "id": "school-87",
+    "name": "국립금오공과대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KfGFNOjlKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-88",
+    "name": "국립목포대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10690271"
+    }
+  },
+  {
+    "id": "school-89",
+    "name": "국립목포해양대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10700541"
+    }
+  },
+  {
+    "id": "school-90",
+    "name": "국립부경대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10720401"
+    }
+  },
+  {
+    "id": "school-91",
+    "name": "국립순천대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10990491"
+    }
+  },
+  {
+    "id": "school-92",
+    "name": "국립인천대학교",
+    "campus": null,
+    "region": "인천",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11230791"
+    }
+  },
+  {
+    "id": "school-93",
+    "name": "국립창원대학교",
+    "campus": null,
+    "region": "경남",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11350621"
+    }
+  },
+  {
+    "id": "school-94",
+    "name": "국립한국교통대학교",
+    "campus": null,
+    "region": "충북·경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "30150631"
+    }
+  },
+  {
+    "id": "school-95",
+    "name": "국립한국해양대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOmFNOUpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-96",
+    "name": "국립한밭대학교",
+    "campus": null,
+    "region": "대전",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "30040971"
+    }
+  },
+  {
+    "id": "school-97",
+    "name": "국민대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVyVNOWFhOUpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-98",
+    "name": "극동대학교",
+    "campus": null,
+    "region": "충북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOlY5SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-99",
+    "name": "금강대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOnJySmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-100",
+    "name": "김천대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "40330621"
+    }
+  },
+  {
+    "id": "school-101",
+    "name": "나사렛대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOld9YTlKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-102",
+    "name": "남부대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOkJNOFdKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-103",
+    "name": "남서울대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KQzphYCZNOFdKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-104",
+    "name": "단국대학교",
+    "campus": null,
+    "region": "경기·충남",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10420521"
+    }
+  },
+  {
+    "id": "school-105",
+    "name": "대구가톨릭대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10461101"
+    }
+  },
+  {
+    "id": "school-106",
+    "name": "대구경북과학기술원(DGIST)",
+    "campus": null,
+    "region": "대구",
+    "type": "특수대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KMCYlclZKXiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-107",
+    "name": "대구교육대학교",
+    "campus": null,
+    "region": "대구",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KYDpXVkpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-108",
+    "name": "대구대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10440821"
+    }
+  },
+  {
+    "id": "school-109",
+    "name": "대구예술대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOjgwSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-110",
+    "name": "대구한의대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10160691"
+    }
+  },
+  {
+    "id": "school-111",
+    "name": "대신대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10480261"
+    }
+  },
+  {
+    "id": "school-112",
+    "name": "대전대학교",
+    "campus": null,
+    "region": "대전",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10501131"
+    }
+  },
+  {
+    "id": "school-113",
+    "name": "대진대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVyUvYDhWSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-114",
+    "name": "덕성여자대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10530631"
+    }
+  },
+  {
+    "id": "school-115",
+    "name": "동국대학교(WISE)",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10540761"
+    }
+  },
+  {
+    "id": "school-116",
+    "name": "동덕여자대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOTpWcldhVkpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-117",
+    "name": "동명대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "30050681"
+    }
+  },
+  {
+    "id": "school-118",
+    "name": "동서대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10570791"
+    }
+  },
+  {
+    "id": "school-119",
+    "name": "동신대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOlclfCZyV2FWSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-120",
+    "name": "동아대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10591481"
+    }
+  },
+  {
+    "id": "school-121",
+    "name": "동의대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOmBWSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-122",
+    "name": "루터대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOjBDSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-123",
+    "name": "명지대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10650761"
+    }
+  },
+  {
+    "id": "school-124",
+    "name": "목원대학교",
+    "campus": null,
+    "region": "대전",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10670761"
+    }
+  },
+  {
+    "id": "school-125",
+    "name": "목포가톨릭대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOkxNSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-126",
+    "name": "배재대학교",
+    "campus": null,
+    "region": "대전",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOkxpSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-127",
+    "name": "백석대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOkJKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-128",
+    "name": "부산가톨릭대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10730551"
+    }
+  },
+  {
+    "id": "school-129",
+    "name": "부산교육대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "20040281"
+    }
+  },
+  {
+    "id": "school-130",
+    "name": "부산대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "12100661"
+    }
+  },
+  {
+    "id": "school-131",
+    "name": "부산외국어대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10750521"
+    }
+  },
+  {
+    "id": "school-132",
+    "name": "삼육대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10760741"
+    }
+  },
+  {
+    "id": "school-133",
+    "name": "상명대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOk0mSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-134",
+    "name": "상명대학교(천안)",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KZjpNJkpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-135",
+    "name": "상지대학교",
+    "campus": null,
+    "region": "강원",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KJS9yVzgmSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-136",
+    "name": "서경대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10810661"
+    }
+  },
+  {
+    "id": "school-137",
+    "name": "서울과학기술대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KMDpXJkpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-138",
+    "name": "서울교육대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KYDpXJkpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-139",
+    "name": "서울기독대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10520591"
+    }
+  },
+  {
+    "id": "school-140",
+    "name": "서울시립대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KJmE6SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-141",
+    "name": "서울신학대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOjAmSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-142",
+    "name": "서울여자대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10860821"
+    }
+  },
+  {
+    "id": "school-143",
+    "name": "서울장신대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVyUmclc4L0M6YWAmSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-144",
+    "name": "서울한영대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11660441"
+    }
+  },
+  {
+    "id": "school-145",
+    "name": "서원대학교",
+    "campus": null,
+    "region": "충북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10880591"
+    }
+  },
+  {
+    "id": "school-146",
+    "name": "선문대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KV2FhTVc6JkpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-147",
+    "name": "성결대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10900771"
+    }
+  },
+  {
+    "id": "school-148",
+    "name": "성공회대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10910511"
+    }
+  },
+  {
+    "id": "school-149",
+    "name": "성신여자대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10930201"
+    }
+  },
+  {
+    "id": "school-150",
+    "name": "세명대학교",
+    "campus": null,
+    "region": "충북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5Kclc6Yk1gJkpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-151",
+    "name": "세종대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10950721"
+    }
+  },
+  {
+    "id": "school-152",
+    "name": "송원대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KV2FOcldhJkpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-153",
+    "name": "수원대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10970461"
+    }
+  },
+  {
+    "id": "school-154",
+    "name": "숙명여자대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "10981501"
+    }
+  },
+  {
+    "id": "school-155",
+    "name": "순천향대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KfEwmSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-156",
+    "name": "숭실대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11010851"
+    }
+  },
+  {
+    "id": "school-157",
+    "name": "신경주대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOi9yV2FgYnJXJSZKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-158",
+    "name": "신라대학교",
+    "campus": null,
+    "region": "부산",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11020621"
+    }
+  },
+  {
+    "id": "school-159",
+    "name": "신한대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11870871"
+    }
+  },
+  {
+    "id": "school-160",
+    "name": "아신대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://www.acts.ac.kr/admission/design/admission08.asp?&amp;left=occa4&amp;cry=2027&amp;crs=susi&amp;mode=view"
+    }
+  },
+  {
+    "id": "school-161",
+    "name": "아주대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11040711"
+    }
+  },
+  {
+    "id": "school-162",
+    "name": "안양대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5Kclc4Ylc4SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-163",
+    "name": "연세대학교(미래)",
+    "campus": null,
+    "region": "강원",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KZiVgJldhYkpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-164",
+    "name": "연암대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "41100351"
+    }
+  },
+  {
+    "id": "school-165",
+    "name": "영남대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOmJKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-166",
+    "name": "영산대학교",
+    "campus": null,
+    "region": "경남·부산",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "30100311"
+    }
+  },
+  {
+    "id": "school-167",
+    "name": "예수대학교",
+    "campus": null,
+    "region": "전북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOmlNSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-168",
+    "name": "용인대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVyVyV2FiSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-169",
+    "name": "우석대학교",
+    "campus": null,
+    "region": "전북·충북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11150621"
+    }
+  },
+  {
+    "id": "school-170",
+    "name": "우송대학교",
+    "campus": null,
+    "region": "대전",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KcldhJmFhTkpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-171",
+    "name": "울산대학교",
+    "campus": null,
+    "region": "울산",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVzgmQzpKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-172",
+    "name": "원광대학교",
+    "campus": null,
+    "region": "전북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5Kclc4TjlXYU5KZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-173",
+    "name": "유원대학교",
+    "campus": null,
+    "region": "충북·충남",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11120571"
+    }
+  },
+  {
+    "id": "school-174",
+    "name": "을지대학교",
+    "campus": null,
+    "region": "대전·경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11190711"
+    }
+  },
+  {
+    "id": "school-175",
+    "name": "인제대학교",
+    "campus": null,
+    "region": "경남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KYC9XJUpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-176",
+    "name": "인천가톨릭대학교",
+    "campus": null,
+    "region": "인천",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11220011"
+    }
+  },
+  {
+    "id": "school-177",
+    "name": "인하대학교",
+    "campus": null,
+    "region": "인천",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOHxXJUpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-178",
+    "name": "장로회신학대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KJjBMaUpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-179",
+    "name": "전남대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOlcvSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-180",
+    "name": "전북대학교",
+    "campus": null,
+    "region": "전북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOldCL0pmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-181",
+    "name": "전주교육대학교",
+    "campus": null,
+    "region": "전북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KYDpXL0pmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-182",
+    "name": "전주대학교",
+    "campus": null,
+    "region": "전북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOi9XYWAvSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-183",
+    "name": "제주대학교",
+    "campus": null,
+    "region": "제주",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOlc6L2AvSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-184",
+    "name": "조선대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11300581"
+    }
+  },
+  {
+    "id": "school-185",
+    "name": "중부대학교",
+    "campus": null,
+    "region": "충남·경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11311031"
+    }
+  },
+  {
+    "id": "school-186",
+    "name": "중앙대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOjhMSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-187",
+    "name": "중원대학교",
+    "campus": null,
+    "region": "충북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11920301"
+    }
+  },
+  {
+    "id": "school-188",
+    "name": "진주교육대학교",
+    "campus": null,
+    "region": "경남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KYDpMSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-189",
+    "name": "차 의과학대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOHxMSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-190",
+    "name": "청운대학교",
+    "campus": null,
+    "region": "충남·인천",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KV2FhTnJXOnxMSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-191",
+    "name": "청주교육대학교",
+    "campus": null,
+    "region": "충북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "20100341"
+    }
+  },
+  {
+    "id": "school-192",
+    "name": "청주대학교",
+    "campus": null,
+    "region": "충북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOi9yV2FgfExKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-193",
+    "name": "초당대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5Kclc4VmF8TEpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-194",
+    "name": "총신대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVyV8JnJXYXxMSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-195",
+    "name": "추계예술대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KYGJyOnxMSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-196",
+    "name": "춘천교육대학교",
+    "campus": null,
+    "region": "강원",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "20110331"
+    }
+  },
+  {
+    "id": "school-197",
+    "name": "충남대학교",
+    "campus": null,
+    "region": "대전",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11400471"
+    }
+  },
+  {
+    "id": "school-198",
+    "name": "충북대학교",
+    "campus": null,
+    "region": "충북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11411051"
+    }
+  },
+  {
+    "id": "school-199",
+    "name": "침례신학대학교",
+    "campus": null,
+    "region": "대전",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KJjowQjlKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-200",
+    "name": "칼빈대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVyVEQzhMSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-201",
+    "name": "평택대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOjBpSmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-202",
+    "name": "포항공과대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KfExgMCZhaUpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-203",
+    "name": "한경국립대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "30161171"
+    }
+  },
+  {
+    "id": "school-204",
+    "name": "한국공학대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "30170741"
+    }
+  },
+  {
+    "id": "school-205",
+    "name": "한국과학기술원(KAIST)",
+    "campus": null,
+    "region": "대전",
+    "type": "특수대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KMCYlODlKXiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-206",
+    "name": "한국교원대학교",
+    "campus": null,
+    "region": "충북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11480401"
+    }
+  },
+  {
+    "id": "school-207",
+    "name": "한국기술교육대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KfExgMDhgfWE5SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-208",
+    "name": "한국에너지공과대학교(KENTECH)",
+    "campus": null,
+    "region": "전남광주",
+    "type": "특수대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KfExgMFdgOUpeJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-209",
+    "name": "한국외국어대학교",
+    "campus": null,
+    "region": "서울·경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KJmg6fEpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-210",
+    "name": "한국체육대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11530431"
+    }
+  },
+  {
+    "id": "school-211",
+    "name": "한국항공대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11540991"
+    }
+  },
+  {
+    "id": "school-212",
+    "name": "한남대학교",
+    "campus": null,
+    "region": "대전",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11560931"
+    }
+  },
+  {
+    "id": "school-213",
+    "name": "한동대학교",
+    "campus": null,
+    "region": "경북",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11570811"
+    }
+  },
+  {
+    "id": "school-214",
+    "name": "한라대학교",
+    "campus": null,
+    "region": "강원",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOENDOHxKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-215",
+    "name": "한림대학교",
+    "campus": null,
+    "region": "강원",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTWJDQzh8SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-216",
+    "name": "한서대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11600881"
+    }
+  },
+  {
+    "id": "school-217",
+    "name": "한성대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5Kclc6Jlc4fEpmJSY6Jko3ZlRm"
+    }
+  },
+  {
+    "id": "school-218",
+    "name": "한세대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KJWAmVzh8SmYlJjomSjdmVGY="
+    }
+  },
+  {
+    "id": "school-219",
+    "name": "한신대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11630451"
+    }
+  },
+  {
+    "id": "school-220",
+    "name": "한양대학교(ERICA)",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11650731"
+    }
+  },
+  {
+    "id": "school-221",
+    "name": "한일장신대학교",
+    "campus": null,
+    "region": "전북",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KQyVXOHxKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-222",
+    "name": "협성대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5Kclc6Jmk6YnxKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-223",
+    "name": "호남대학교",
+    "campus": null,
+    "region": "전남광주",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11690691"
+    }
+  },
+  {
+    "id": "school-224",
+    "name": "호서대학교",
+    "campus": null,
+    "region": "충남",
+    "type": "4년제",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KYWAmYXxKZiUmOiZKN2ZUZg=="
+    }
+  },
+  {
+    "id": "school-225",
+    "name": "홍익대학교(세종)",
+    "campus": null,
+    "region": "세종",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11720892"
+    }
+  },
+  {
+    "id": "school-226",
+    "name": "화성의과학대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "4년제",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "11880441"
+    }
   }
 ]

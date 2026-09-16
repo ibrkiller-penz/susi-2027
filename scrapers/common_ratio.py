@@ -14,7 +14,7 @@ from typing import Optional
 
 from bs4 import BeautifulSoup
 
-_HEADING_SUFFIX_RE = re.compile(r"(경쟁률|지원율)\s*현황$")
+_HEADING_MARKER_RE = re.compile(r"(경쟁률|지원율)\s*현황")
 
 
 @dataclass
@@ -49,12 +49,18 @@ def _to_ratio(text: str) -> Optional[float]:
 
 
 def _heading_admission_type(table) -> str:
+    """표 앞의 'OOO경쟁률 현황' 제목에서 전형명을 뽑는다. 목원대처럼 "현황" 뒤에
+    설명이 더 붙는 경우(예: "...경쟁률 현황교과100[면접없음]")도 있어서, 끝(anchor)이
+    아니라 문자열 어디서든 "경쟁률/지원율 현황"을 찾아 그 앞부분만 쓴다.
+    """
     node = table.find_previous_sibling()
     seen = 0
     while node is not None and seen < 5:
         text = node.get_text(strip=True)
-        if text and _HEADING_SUFFIX_RE.search(text):
-            return _HEADING_SUFFIX_RE.sub("", text).strip()
+        if text:
+            m = _HEADING_MARKER_RE.search(text)
+            if m:
+                return text[: m.start()].strip()
         if node.name == "table":
             break
         node = node.find_previous_sibling()
@@ -77,7 +83,7 @@ def _ratio_col_index(headers: list[str]) -> Optional[int]:
     """경쟁률/지원율 컬럼 위치를 찾는다. 그 앞 두 칸은 항상 모집/지원 인원이고,
     그 뒤에 '학과 홈페이지' 같은 부가 컬럼이 더 붙어도(유한대 등) 무시할 수 있다."""
     for i, h in enumerate(headers):
-        if h in ("경쟁률", "지원율") and i >= 2:
+        if h in ("경쟁률", "지원율", "지원현황") and i >= 2:
             return i
     return None
 
@@ -96,7 +102,14 @@ def _try_wide_format(
     th만 있고 td는 없는 '순수 헤더 행'만 골라 마지막 두 개를 2단 헤더로 쓴다).
     """
     rows = table.find_all("tr")
-    pure_header_rows = [r for r in rows if r.find_all("th") and not r.find_all("td")]
+
+    def _is_total_row(r) -> bool:
+        ths = r.find_all("th")
+        return bool(ths) and ths[0].get_text(strip=True).startswith(("총계", "소계"))
+
+    pure_header_rows = [
+        r for r in rows if r.find_all("th") and not r.find_all("td") and not _is_total_row(r)
+    ]
     if len(pure_header_rows) < 2:
         return None
     row_a, row_b = pure_header_rows[-2], pure_header_rows[-1]
@@ -167,6 +180,59 @@ def _try_wide_format(
     return records
 
 
+def _try_summary_fallback(
+    table, university: str, campus: Optional[str], source_url: str
+) -> Optional[list[RatioRecord]]:
+    """모집단위별 상세표가 아예 없고 '전형명/모집인원/지원인원/경쟁률' 총괄표만 있는
+    학교용 최후 수단 (한동대, KAIST, 교육대 등 — 단일 학과이거나 총계만 공개하는 곳).
+    모집단위 정보가 없으니 department는 "전체"로 채운다.
+    """
+    rows = table.find_all("tr")
+    if not rows:
+        return None
+    headers = [th.get_text(strip=True) for th in rows[0].find_all("th")]
+    is_gubun = "구분" in headers  # 전형별 구분조차 없이 총계 한 줄만 공개하는 학교 (KAIST 등)
+    if not is_gubun and not any(h in ("전형명", "전형") for h in headers):
+        return None
+    ratio_idx = _ratio_col_index(headers)
+    if ratio_idx is None or ratio_idx < 2:
+        return None
+
+    records: list[RatioRecord] = []
+    for row in rows[1:]:
+        cells = row.find_all("td")
+        if not cells:
+            continue
+        vals = [c.get_text(strip=True) for c in cells]
+        if not is_gubun and any(v.startswith("총계") or v.startswith("소계") for v in vals):
+            continue
+        if len(vals) < ratio_idx + 1:
+            continue
+        admission_type = "전체" if is_gubun else vals[0]
+        cap_s, app_s, ratio_s = vals[ratio_idx - 2], vals[ratio_idx - 1], vals[ratio_idx]
+        capacity = _to_int(cap_s)
+        if capacity is None or not admission_type:
+            continue
+        applicants = _to_int(app_s) or 0
+        ratio_val = _to_ratio(ratio_s)
+        if ratio_val is None:
+            ratio_val = round(applicants / capacity, 2) if capacity else 0.0
+        records.append(
+            RatioRecord(
+                university=university,
+                campus=campus,
+                admission_type=admission_type,
+                college=None,
+                department="전체",
+                capacity=capacity,
+                applicants=applicants,
+                ratio=ratio_val,
+                source_url=source_url,
+            )
+        )
+    return records or None
+
+
 def parse_ratio_html(
     html: str, university: str, source_url: str, campus: Optional[str] = None
 ) -> list[RatioRecord]:
@@ -192,15 +258,16 @@ def parse_ratio_html(
         if "접수단위" in lead_headers:
             dept_idx = lead_headers.index("접수단위")
             college_idx = lead_headers.index(dept_name) if dept_name in lead_headers else None
-            type_idx = lead_headers.index("전형") if "전형" in lead_headers else None
         else:
             dept_idx = lead_headers.index(dept_name)
-            # 모집단위 앞에 컬럼이 더 있으면(대학/계열 등, 이름 무관) 그게 college,
-            # 그 앞에 하나 더 있으면 전형 컬럼이다.
+            # 모집단위 앞에 컬럼이 더 있으면(대학/계열/캠퍼스 등, 이름 무관) 그중 모집단위
+            # 바로 앞 칸을 college로 쓴다. 전형 컬럼 여부는 위치로 추측하지 않는다 —
+            # "캠퍼스,대학,모집단위"처럼 전형이 아예 없는 3단 구성도 있어서, 명시적으로
+            # "전형" 헤더가 있을 때만 그 값을 쓰고 없으면 항상 제목(heading) 쪽을 본다.
             before = lead_headers[:dept_idx]
             college_idx = dept_idx - 1 if before else None
-            type_idx = 0 if len(before) >= 2 else None
 
+        type_idx = lead_headers.index("전형") if "전형" in lead_headers else None
         heading_type = "" if type_idx is not None else _heading_admission_type(table)
 
         sticky: list[Optional[str]] = [None] * len(lead_headers)
@@ -253,6 +320,12 @@ def parse_ratio_html(
                     source_url=source_url,
                 )
             )
+
+    if not records:
+        for table in soup.find_all("table"):
+            fallback = _try_summary_fallback(table, university, campus, source_url)
+            if fallback:
+                records.extend(fallback)
 
     return records
 
