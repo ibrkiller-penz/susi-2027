@@ -256,7 +256,11 @@
     "id": "polytech1",
     "name": "한국폴리텍Ⅰ대학(서울정수,서울강서,성남,제주)",
     "campus": null,
-    "region": "서울·경기·제주",
+    "region": [
+      "서울",
+      "경기",
+      "제주"
+    ],
     "type": "전문대",
     "scraper": "jinhak_addon",
     "params": {
@@ -289,7 +293,11 @@
     "id": "polytech4",
     "name": "한국폴리텍Ⅳ대학(대전,청주,아산,충남)",
     "campus": null,
-    "region": "대전·충남·세종",
+    "region": [
+      "대전",
+      "충남",
+      "세종"
+    ],
     "type": "전문대",
     "scraper": "jinhak_addon",
     "params": {
@@ -300,7 +308,10 @@
     "id": "polytech5",
     "name": "한국폴리텍Ⅴ대학(광주,전북,전남,익산)",
     "campus": null,
-    "region": "전남광주·전북",
+    "region": [
+      "전남광주",
+      "전북"
+    ],
     "type": "전문대",
     "scraper": "jinhak_addon",
     "params": {
@@ -322,7 +333,11 @@
     "id": "polytech7",
     "name": "한국폴리텍Ⅶ대학(창원,부산,울산)",
     "campus": null,
-    "region": "부산·울산·경남",
+    "region": [
+      "부산",
+      "울산",
+      "경남"
+    ],
     "type": "전문대",
     "scraper": "jinhak_addon",
     "params": {
@@ -333,7 +348,11 @@
     "id": "polytech-special",
     "name": "한국폴리텍특성화대학(바이오,반도체융합,항공,로봇)",
     "campus": null,
-    "region": "충남·경남·경북",
+    "region": [
+      "충남",
+      "경남",
+      "경북"
+    ],
     "type": "전문대",
     "scraper": "jinhak_addon",
     "params": {
@@ -729,7 +748,10 @@
     "id": "school-66",
     "name": "경기대학교",
     "campus": null,
-    "region": "경기·서울",
+    "region": [
+      "경기",
+      "서울"
+    ],
     "type": "4년제",
     "scraper": "uway_ratio",
     "params": {
@@ -806,7 +828,10 @@
     "id": "school-73",
     "name": "경희대학교",
     "campus": null,
-    "region": "서울·경기",
+    "region": [
+      "서울",
+      "경기"
+    ],
     "type": "4년제",
     "scraper": "uway_ratio",
     "params": {
@@ -1037,7 +1062,10 @@
     "id": "school-94",
     "name": "국립한국교통대학교",
     "campus": null,
-    "region": "충북·경기",
+    "region": [
+      "충북",
+      "경기"
+    ],
     "type": "4년제",
     "scraper": "jinhak_addon",
     "params": {
@@ -1147,7 +1175,10 @@
     "id": "school-104",
     "name": "단국대학교",
     "campus": null,
-    "region": "경기·충남",
+    "region": [
+      "경기",
+      "충남"
+    ],
     "type": "4년제",
     "scraper": "jinhak_addon",
     "params": {
@@ -1829,7 +1860,10 @@
     "id": "school-166",
     "name": "영산대학교",
     "campus": null,
-    "region": "경남·부산",
+    "region": [
+      "경남",
+      "부산"
+    ],
     "type": "4년제",
     "scraper": "jinhak_addon",
     "params": {
@@ -1862,7 +1896,10 @@
     "id": "school-169",
     "name": "우석대학교",
     "campus": null,
-    "region": "전북·충북",
+    "region": [
+      "전북",
+      "충북"
+    ],
     "type": "4년제",
     "scraper": "jinhak_addon",
     "params": {
@@ -1906,7 +1943,10 @@
     "id": "school-173",
     "name": "유원대학교",
     "campus": null,
-    "region": "충북·충남",
+    "region": [
+      "충북",
+      "충남"
+    ],
     "type": "4년제",
     "scraper": "jinhak_addon",
     "params": {
@@ -1917,7 +1957,10 @@
     "id": "school-174",
     "name": "을지대학교",
     "campus": null,
-    "region": "대전·경기",
+    "region": [
+      "대전",
+      "경기"
+    ],
     "type": "4년제",
     "scraper": "jinhak_addon",
     "params": {
@@ -2038,7 +2081,10 @@
     "id": "school-185",
     "name": "중부대학교",
     "campus": null,
-    "region": "충남·경기",
+    "region": [
+      "충남",
+      "경기"
+    ],
     "type": "4년제",
     "scraper": "jinhak_addon",
     "params": {
@@ -2093,7 +2139,10 @@
     "id": "school-190",
     "name": "청운대학교",
     "campus": null,
-    "region": "충남·인천",
+    "region": [
+      "충남",
+      "인천"
+    ],
     "type": "4년제",
     "scraper": "uway_ratio",
     "params": {
@@ -2302,7 +2351,10 @@
     "id": "school-209",
     "name": "한국외국어대학교",
     "campus": null,
-    "region": "서울·경기",
+    "region": [
+      "서울",
+      "경기"
+    ],
     "type": "4년제",
     "scraper": "uway_ratio",
     "params": {

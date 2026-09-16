@@ -54,11 +54,12 @@ function buildUniversities() {
   for (const r of state.records) {
     const key = univKey(r);
     if (!map.has(key)) {
+      const regions = Array.isArray(r.region) ? r.region.filter(Boolean) : (r.region ? [r.region] : []);
       map.set(key, {
         key,
         university: r.university,
         campus: r.campus || null,
-        region: r.region,
+        regions: regions.length ? regions : ["기타"],
         univ_type: r.univ_type,
         source_url: r.source_url,
         deptCount: 0,
@@ -101,7 +102,7 @@ function getSearchedUniversities() {
 
 function getFilteredUniversities() {
   return getSearchedUniversities().filter((u) => {
-    if (state.region && u.region !== state.region) return false;
+    if (state.region && !u.regions.includes(state.region)) return false;
     if (state.type && u.univ_type !== state.type) return false;
     return true;
   });
@@ -132,19 +133,22 @@ function renderPills() {
 
   const typeCounts = new Map();
   for (const u of searched) {
-    if (state.region && u.region !== state.region) continue;
+    if (state.region && !u.regions.includes(state.region)) continue;
     typeCounts.set(u.univ_type, (typeCounts.get(u.univ_type) || 0) + 1);
   }
   const typeTotal = [...typeCounts.values()].reduce((a, b) => a + b, 0);
   const typeList = [["", "전체", typeTotal], ...Array.from(typeCounts, ([k, v]) => [k, k || "기타", v])];
   renderPillGroup(els.typePills, typeList, state.type, (val) => { state.type = val; render(); });
 
+  // 지역은 대학 하나가 여러 지역에 걸칠 수 있어서(한국폴리텍 등), 각 지역마다 개별 집계한다.
   const regionCounts = new Map();
+  const countedUnivs = new Set();
   for (const u of searched) {
     if (state.type && u.univ_type !== state.type) continue;
-    regionCounts.set(u.region, (regionCounts.get(u.region) || 0) + 1);
+    countedUnivs.add(u.key);
+    for (const r of u.regions) regionCounts.set(r, (regionCounts.get(r) || 0) + 1);
   }
-  const regionTotal = [...regionCounts.values()].reduce((a, b) => a + b, 0);
+  const regionTotal = countedUnivs.size;
   const regionEntries = Array.from(regionCounts, ([k, v]) => [k, k || "기타", v])
     .sort((a, b) => b[2] - a[2]);
   const regionList = [["", "전체 지역", regionTotal], ...regionEntries];
@@ -174,11 +178,14 @@ function renderList() {
   els.emptyState.hidden = filtered.length > 0;
 
   // 특정 지역을 골랐으면 섹션 하나, "전체"면 지역별 섹션으로 묶어서 원본 사이트처럼 보여준다.
+  // 대학 하나가 여러 지역에 걸치면(한국폴리텍 등) 해당하는 지역 섹션 모두에 나타난다.
   const groups = new Map();
   for (const u of filtered) {
-    const groupKey = state.region ? state.region : (u.region || "기타");
-    if (!groups.has(groupKey)) groups.set(groupKey, []);
-    groups.get(groupKey).push(u);
+    const groupKeys = state.region ? [state.region] : u.regions;
+    for (const groupKey of groupKeys) {
+      if (!groups.has(groupKey)) groups.set(groupKey, []);
+      groups.get(groupKey).push(u);
+    }
   }
   const groupOrder = Array.from(groups.entries()).sort((a, b) => b[1].length - a[1].length);
 

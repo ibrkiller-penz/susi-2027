@@ -58,8 +58,10 @@ def run() -> None:
             continue
         try:
             records = fn(uni)
+            region = uni.get("region")
+            regions = region if isinstance(region, list) else [region] if region else []
             for r in records:
-                r["region"] = uni.get("region")
+                r["region"] = regions  # 복수 지역에 걸친 대학(예: 한국폴리텍)도 있어서 항상 리스트로 저장
                 r["univ_type"] = uni.get("type")
                 r["univ_id"] = uni.get("id")
             all_records.extend(records)
