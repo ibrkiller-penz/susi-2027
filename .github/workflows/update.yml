@@ -28,3 +28,12 @@ jobs:
           git add docs/data.json
           git diff --cached --quiet && echo "no changes" || git commit -m "chore: update ratio data"
           git push
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Deploy to Firebase Hosting
+        run: npx firebase-tools deploy --only hosting --project susi-3c093 --token "$FIREBASE_TOKEN"
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

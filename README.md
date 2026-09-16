@@ -11,10 +11,12 @@
 4. `docs/` (GitHub Pages 루트)의 정적 대시보드가 그 JSON을 읽어 화면에 표로 보여준다.
 
 갱신은 자동 주기 실행이 아니라 **수동 버튼**으로만 한다 — GitHub 저장소의 Actions 탭 →
-"Update ratio data" → **Run workflow** 버튼을 누르면 2번 과정이 실행되어 `docs/data.json`을 갱신하고
-커밋한다. (`gh workflow run "Update ratio data"` 로 터미널에서 눌러도 된다.) GitHub Pages는 그 커밋을
-자동으로 반영하지만, Firebase Hosting 쪽은 별도로 `npx firebase-tools deploy --only hosting --project susi-3c093`를
-로컬에서 한 번 더 실행해야 최신 데이터가 올라간다.
+"Update ratio data" → **Run workflow** 버튼을 누르면 2·3번 과정(스크래핑 → `docs/data.json` 커밋 →
+Firebase Hosting 배포)이 한 번에 실행된다. (`gh workflow run "Update ratio data"` 로 터미널에서 눌러도 된다.)
+GitHub Pages는 커밋만 반영하면 되니 별도 배포 단계 없이 자동으로 최신화된다.
+
+Firebase 배포 단계는 저장소 시크릿 `FIREBASE_TOKEN`이 있어야 동작한다. 없으면 그 스텝만 실패하고
+데이터 커밋 자체는 정상적으로 끝난다. 시크릿 만드는 법은 아래 "Firebase Hosting 자동 배포 설정" 참고.
 
 ## 데이터 소스에 대해 알아둘 것
 
@@ -80,3 +82,26 @@ npx firebase-tools deploy --only hosting --project susi-3c093
 ```
 
 하면 네 도메인 모두에 `docs/` 내용이 그대로 배포된다.
+
+## Firebase Hosting 자동 배포 설정 (`FIREBASE_TOKEN` 시크릿)
+
+Actions의 Run workflow 버튼으로 Firebase 배포까지 자동으로 하려면, CI용 토큰을 발급해서
+저장소 시크릿으로 등록해야 한다. **토큰은 채팅이나 다른 사람 손을 거치지 않고, 본인 터미널에서
+바로 GitHub로 넣는 게 안전**하다 — 아래 두 명령을 본인 컴퓨터 터미널에서 순서대로 실행:
+
+```bash
+firebase login:ci
+```
+
+브라우저가 열리면 로그인/동의하고, 터미널에 출력되는 토큰 문자열을 복사한다. 그다음:
+
+```bash
+gh secret set FIREBASE_TOKEN --repo ibrkiller-penz/susi-2027
+```
+
+실행하면 토큰을 붙여넣으라고 뜨는데, 그때 붙여넣으면 끝. (`gh`가 없으면 GitHub 저장소 →
+Settings → Secrets and variables → Actions → New repository secret 에서 이름 `FIREBASE_TOKEN`,
+값에 토큰을 붙여넣어도 된다.)
+
+토큰은 계정 전체에 대한 Firebase 배포 권한을 가지므로 절대 코드에 커밋하거나 다른 사람과
+공유하지 말 것. 재발급하려면 `firebase login:ci` 를 다시 실행하면 된다.
