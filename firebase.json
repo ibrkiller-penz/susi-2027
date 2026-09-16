@@ -1,0 +1,60 @@
+{
+  "hosting": [
+    {
+      "target": "susi2027",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        { "source": "**/*.@(html|js|css|json)", "headers": [{ "key": "Cache-Control", "value": "no-cache, max-age=0" }] }
+      ]
+    },
+    {
+      "target": "susi2028",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        { "source": "**/*.@(html|js|css|json)", "headers": [{ "key": "Cache-Control", "value": "no-cache, max-age=0" }] }
+      ]
+    },
+    {
+      "target": "susihy2028",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        { "source": "**/*.@(html|js|css|json)", "headers": [{ "key": "Cache-Control", "value": "no-cache, max-age=0" }] }
+      ]
+    },
+    {
+      "target": "susi2029",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        { "source": "**/*.@(html|js|css|json)", "headers": [{ "key": "Cache-Control", "value": "no-cache, max-age=0" }] }
+      ]
+    },
+    {
+      "target": "susi2030",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        { "source": "**/*.@(html|js|css|json)", "headers": [{ "key": "Cache-Control", "value": "no-cache, max-age=0" }] }
+      ]
+    },
+    {
+      "target": "susi2031",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        { "source": "**/*.@(html|js|css|json)", "headers": [{ "key": "Cache-Control", "value": "no-cache, max-age=0" }] }
+      ]
+    },
+    {
+      "target": "susi2032",
+      "public": "docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        { "source": "**/*.@(html|js|css|json)", "headers": [{ "key": "Cache-Control", "value": "no-cache, max-age=0" }] }
+      ]
+    }
+  ]
+}

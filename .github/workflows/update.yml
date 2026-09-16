@@ -1,9 +1,7 @@
 name: Update ratio data
 
 on:
-  schedule:
-    # 매 20분마다 (수시 접수 기간에만 의미 있음 — 평소엔 그냥 빈 diff로 끝남)
-    - cron: "*/20 * * * *"
+  # 자동 주기 실행 없음 — GitHub Actions 탭에서 "Run workflow" 버튼을 눌러야만 갱신된다.
   workflow_dispatch: {}
 
 permissions:
