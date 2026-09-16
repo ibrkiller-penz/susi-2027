@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import jinhak_addon  # noqa: E402
+import uway_ratio  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 UNIVERSITIES_PATH = ROOT / "data" / "universities.json"
@@ -29,6 +30,11 @@ SCRAPERS = {
     "jinhak_addon": lambda uni: jinhak_addon.fetch_university(
         university=f"{uni['name']}",
         ratio_id=uni["params"]["ratio_id"],
+        campus=uni.get("campus"),
+    ),
+    "uway_ratio": lambda uni: uway_ratio.fetch_university(
+        university=f"{uni['name']}",
+        url=uni["params"]["url"],
         campus=uni.get("campus"),
     ),
 }

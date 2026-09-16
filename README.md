@@ -20,34 +20,39 @@ Firebase 배포 단계는 저장소 시크릿 `FIREBASE_TOKEN`이 있어야 동�
 
 ## 데이터 소스에 대해 알아둘 것
 
-대학마다 경쟁률을 공개하는 방식이 다르다. 조사해보니 크게 두 갈래다.
+대학마다 경쟁률을 공개하는 방식이 다르다. 조사해보니 크게 세 갈래다.
 
-- **진학어플라이 부가서비스 (`addon.jinhakapply.com/RatioV1/RatioH/Ratio{ID}.html`)**
-  꽤 많은 대학이 이 위젯을 자기 입학처 페이지에 그대로 임베드해서 쓴다. HTML 표 구조가 대부분 동일해서
-  `scrapers/jinhak_addon.py` 하나로 여러 대학을 커버할 수 있다. **새 대학을 추가하려면**
-  `"<대학명> 경쟁률 서비스"`로 검색해서 `addon.jinhakapply.com` 링크를 찾고, URL 끝의 숫자 ID를
-  `data/universities.json`에 등록하면 끝.
-- **대학 자체 시스템**: 서울대·연세대·고려대 등 상당수는 자체 입학처 사이트에 직접 표를 그린다.
-  이런 곳은 페이지 구조가 제각각이라 대학별로 `scrapers/` 안에 파서를 하나씩 더 만들어야 한다.
-  (아직 미구현 — 이번 연습에서 다음 단계로 추가해나갈 부분)
+- **진학어플라이 부가서비스 (`addon.jinhakapply.com/RatioV1/RatioH/Ratio{ID}.html`)** —
+  4년제 상당수가 자기 입학처 페이지에 이 위젯을 그대로 임베드해서 쓴다.
+  `scrapers/jinhak_addon.py`가 담당. **새 대학 추가**: `"<대학명> 경쟁률 서비스"`로 검색해서
+  `addon.jinhakapply.com` 링크를 찾고, URL 끝의 숫자 ID를 등록.
+- **유웨이어플라이 (`ratio.uwayapply.com/<opaque 문자열>`)** — 주로 전문대가 쓰는 동일 계열 위젯.
+  URL이 base64 비슷한 opaque 문자열이라 ID를 조립할 수 없어서, 전체 URL을 그대로 저장한다.
+  `scrapers/uway_ratio.py`가 담당.
+- **전문대학 스마트경쟁률 포털 (`apply.jinhakapply.com/SmartRatio`)** — 위 두 위젯을 쓰는 전문대를
+  한 번에 찾을 수 있는 곳. 이 페이지의 `a.rate` 요소마다 `data-label`(학교명), `data-link`(실제
+  경쟁률 URL) 속성이 있어서, 브라우저 콘솔에서 한 번에 긁으면 여러 학교를 동시에 찾을 수 있다.
+  단, 여기 없는 4년제(서울대/연세대/고려대 등)는 계속 개별 검색으로 찾아야 하고,
+  이 포털에 있어도 앞의 두 위젯이 아닌 대학 자체 시스템(gyu.ac.kr, ccn.ac.kr 등)을 쓰는 학교는
+  그 학교 전용 스크래퍼를 따로 만들어야 한다 (아직 미구현).
 
-즉 "전체 대학 풀 클론"은 한 번에 되는 게 아니라, `jinhak_addon` 계열부터 채우고 나머지는
-대학별 스크래퍼를 하나씩 추가하는 식으로 점진적으로 넓혀가야 한다. 현재 등록: 건국대(서울/글로컬),
-한양대(서울), 홍익대, 동국대(서울), 서강대 — 6개 캠퍼스.
-
-같은 `addon.jinhakapply.com` 위젯이라도 대학마다 표 컬럼 구성이 다르다는 걸 확인했다
-(전형 컬럼이 아예 없고 `<h2>OOO경쟁률 현황</h2>` 제목에서 전형명을 가져와야 하는 곳도 있고,
-"대학" 컬럼 없이 모집단위만 있는 곳도 있음). `jinhak_addon.py`의 `parse()`는 고정된 컬럼 개수로
-분기하지 않고, 각 표의 헤더 텍스트를 읽어서 전형/대학/모집단위/접수단위 위치를 그때그때 찾는
-방식으로 짜여 있다 — 새 대학을 추가했는데 `admission_type`이 비거나 레코드가 0건이면 먼저
-`_is_detail_table`과 헤더 매핑 로직이 그 대학의 표 구조를 인식하는지부터 확인할 것.
+진학어플라이/유웨이 위젯 파싱 로직은 `scrapers/common_ratio.py` 하나에 모아뒀고,
+`jinhak_addon.py`/`uway_ratio.py`는 URL 조립 방식만 다른 얇은 래퍼다. 같은 위젯이라도 표 구조가
+대학마다 미묘하게 다르다는 걸 확인했다 — 컬럼 이름(모집단위/모집학과, 경쟁률/지원율), 전형 컬럼의
+유무(없으면 "OOO 경쟁률(지원율) 현황" 제목에서 가져옴), 끝에 "학과 홈페이지" 같은 여분 컬럼이 붙는
+경우, 심지어 전형별 (모집/지원/경쟁률) 3열 세트가 한 표에 옆으로 나란히 붙는 "와이드" 형태(한국폴리텍,
+청강문화산업대)까지 있다. 그래서 고정 컬럼 개수로 분기하지 않고 헤더 텍스트를 읽어서 그때그때
+위치를 판단한다 — 새 대학을 추가했는데 레코드가 0건이거나 `admission_type`이 비면
+`common_ratio.py`의 `_is_detail_table`/`_ratio_col_index`/`_try_wide_format`이 그 학교의 표
+구조를 인식 못 하는 것이니 먼저 `BeautifulSoup`으로 실제 헤더를 찍어볼 것.
 
 ### 후보를 찾았다고 바로 등록하면 안 되는 이유
 
 검색으로 나오는 `addon.jinhakapply.com/.../Ratio{ID}.html` 후보 중 상당수가 과거 학년도(정시 포함)
 캐시 페이지다. 등록 전에 반드시 `jinhak_addon.fetch_html(id)`로 받아서 `TitleYear`가 올해 수시
 학년도인지, `TitleService`가 "수시모집"인지 확인할 것. (예: 성균관대 `10920451`은 2026학년도라 제외함 —
-2027학년도 ID를 아직 못 찾았다.)
+2027학년도 ID를 아직 못 찾았다.) 반대로 `SmartRatio` 포털에서 뽑은 링크는 "지금 접수중"인 것만
+긁은 거라 이 검증이 따로 필요 없다.
 
 ## 로컬에서 실행하기
 
@@ -59,12 +64,18 @@ python -m http.server 8000 --directory docs   # http://localhost:8000 에서 확
 
 ## 새 대학 추가하기
 
-1. `"<대학명> 경쟁률 서비스"`로 검색해서 데이터 소스를 찾는다.
-2. `addon.jinhakapply.com` 위젯이면 `data/universities.json`에 아래 형태로 한 줄 추가:
+1. `"<대학명> 경쟁률 서비스"`로 검색하거나(4년제), `apply.jinhakapply.com/SmartRatio`에서
+   `a.rate` 요소의 `data-label`/`data-link`를 긁어서(전문대, 여러 개 한 번에) 데이터 소스를 찾는다.
+2. `addon.jinhakapply.com` 위젯이면 `data/universities.json`에 추가:
    ```json
    { "id": "고유id", "name": "학교명", "campus": "캠퍼스명 또는 null", "region": "지역", "type": "4년제|전문대", "scraper": "jinhak_addon", "params": { "ratio_id": "URL 끝 숫자" } }
    ```
-3. 자체 시스템이면 `scrapers/`에 새 모듈을 만들고 `scrapers/run_all.py`의 `SCRAPERS` 딕셔너리에 등록한다.
+3. `ratio.uwayapply.com` 위젯이면:
+   ```json
+   { "id": "고유id", "name": "학교명", "campus": null, "region": "지역", "type": "전문대", "scraper": "uway_ratio", "params": { "url": "전체 URL 그대로" } }
+   ```
+4. 둘 다 아니면(대학 자체 시스템) `scrapers/`에 새 모듈을 만들고 `scrapers/run_all.py`의
+   `SCRAPERS` 딕셔너리에 등록한다.
 
 ## 배포 (GitHub Pages)
 

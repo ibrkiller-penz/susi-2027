@@ -6,7 +6,9 @@
     "region": "서울",
     "type": "4년제",
     "scraper": "jinhak_addon",
-    "params": { "ratio_id": "10080151" }
+    "params": {
+      "ratio_id": "10080151"
+    }
   },
   {
     "id": "konkuk-glocal",
@@ -15,7 +17,9 @@
     "region": "충북",
     "type": "4년제",
     "scraper": "jinhak_addon",
-    "params": { "ratio_id": "10091341" }
+    "params": {
+      "ratio_id": "10091341"
+    }
   },
   {
     "id": "hanyang-seoul",
@@ -24,7 +28,9 @@
     "region": "서울",
     "type": "4년제",
     "scraper": "jinhak_addon",
-    "params": { "ratio_id": "11640591" }
+    "params": {
+      "ratio_id": "11640591"
+    }
   },
   {
     "id": "hongik-seoul",
@@ -33,7 +39,9 @@
     "region": "서울",
     "type": "4년제",
     "scraper": "jinhak_addon",
-    "params": { "ratio_id": "11720891" }
+    "params": {
+      "ratio_id": "11720891"
+    }
   },
   {
     "id": "dongguk-seoul",
@@ -42,7 +50,9 @@
     "region": "서울",
     "type": "4년제",
     "scraper": "jinhak_addon",
-    "params": { "ratio_id": "10550541" }
+    "params": {
+      "ratio_id": "10550541"
+    }
   },
   {
     "id": "sogang-seoul",
@@ -51,7 +61,9 @@
     "region": "서울",
     "type": "4년제",
     "scraper": "jinhak_addon",
-    "params": { "ratio_id": "12050481" }
+    "params": {
+      "ratio_id": "12050481"
+    }
   },
   {
     "id": "ewha-seoul",
@@ -60,7 +72,9 @@
     "region": "서울",
     "type": "4년제",
     "scraper": "jinhak_addon",
-    "params": { "ratio_id": "11202121" }
+    "params": {
+      "ratio_id": "11202121"
+    }
   },
   {
     "id": "yonsei-seoul",
@@ -69,7 +83,9 @@
     "region": "서울",
     "type": "4년제",
     "scraper": "jinhak_addon",
-    "params": { "ratio_id": "11080811" }
+    "params": {
+      "ratio_id": "11080811"
+    }
   },
   {
     "id": "skku-seoul",
@@ -78,6 +94,503 @@
     "region": "서울",
     "type": "4년제",
     "scraper": "jinhak_addon",
-    "params": { "ratio_id": "10920591" }
+    "params": {
+      "ratio_id": "10920591"
+    }
+  },
+  {
+    "id": "gyeongmin",
+    "name": "경민대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "40120531"
+    }
+  },
+  {
+    "id": "gyeongbok",
+    "name": "경복대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "40130831"
+    }
+  },
+  {
+    "id": "gyeongin-women",
+    "name": "경인여자대학교",
+    "campus": null,
+    "region": "인천",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "40180721"
+    }
+  },
+  {
+    "id": "knau",
+    "name": "국립한국농수산대학교",
+    "campus": null,
+    "region": "전북",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "41700211"
+    }
+  },
+  {
+    "id": "dongyang-mirae",
+    "name": "동양미래대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "40580411"
+    }
+  },
+  {
+    "id": "baewha-women",
+    "name": "배화여자대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "40680671"
+    }
+  },
+  {
+    "id": "baekje-arts",
+    "name": "백제예술대학교",
+    "campus": null,
+    "region": "전북",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "40690471"
+    }
+  },
+  {
+    "id": "sahmyook-health",
+    "name": "삼육보건대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "40760541"
+    }
+  },
+  {
+    "id": "seoil",
+    "name": "서일대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "40840701"
+    }
+  },
+  {
+    "id": "seojeong",
+    "name": "서정대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "41600441"
+    }
+  },
+  {
+    "id": "ulsan-college",
+    "name": "울산과학대학교",
+    "campus": null,
+    "region": "울산",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "41190481"
+    }
+  },
+  {
+    "id": "inha-tech",
+    "name": "인하공업전문대학",
+    "campus": null,
+    "region": "인천",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "41260551"
+    }
+  },
+  {
+    "id": "jeiu",
+    "name": "재능대학교",
+    "campus": null,
+    "region": "인천",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "41290971"
+    }
+  },
+  {
+    "id": "chungkang",
+    "name": "청강문화산업대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "41470661"
+    }
+  },
+  {
+    "id": "polytech1",
+    "name": "한국폴리텍Ⅰ대학(서울정수,서울강서,성남,제주)",
+    "campus": null,
+    "region": "서울·경기·제주",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "50410441"
+    }
+  },
+  {
+    "id": "polytech2",
+    "name": "한국폴리텍Ⅱ대학(인천,남인천)",
+    "campus": null,
+    "region": "인천",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "50420441"
+    }
+  },
+  {
+    "id": "polytech3",
+    "name": "한국폴리텍Ⅲ대학(춘천,원주,강릉)",
+    "campus": null,
+    "region": "강원",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "50430471"
+    }
+  },
+  {
+    "id": "polytech4",
+    "name": "한국폴리텍Ⅳ대학(대전,청주,아산,충남)",
+    "campus": null,
+    "region": "대전·충남·세종",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "50440431"
+    }
+  },
+  {
+    "id": "polytech5",
+    "name": "한국폴리텍Ⅴ대학(광주,전북,전남,익산)",
+    "campus": null,
+    "region": "전남광주·전북",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "50450481"
+    }
+  },
+  {
+    "id": "polytech6",
+    "name": "한국폴리텍Ⅵ대학(대구,구미,영주,영남융합기술)",
+    "campus": null,
+    "region": "경북",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "50460421"
+    }
+  },
+  {
+    "id": "polytech7",
+    "name": "한국폴리텍Ⅶ대학(창원,부산,울산)",
+    "campus": null,
+    "region": "부산·울산·경남",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "50470451"
+    }
+  },
+  {
+    "id": "polytech-special",
+    "name": "한국폴리텍특성화대학(바이오,반도체융합,항공,로봇)",
+    "campus": null,
+    "region": "충남·경남·경북",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "50480401"
+    }
+  },
+  {
+    "id": "hallym-sungsim",
+    "name": "한림성심대학교",
+    "campus": null,
+    "region": "강원",
+    "type": "전문대",
+    "scraper": "jinhak_addon",
+    "params": {
+      "ratio_id": "41550971"
+    }
+  },
+  {
+    "id": "gyeonggi-tech",
+    "name": "경기과학기술대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KMCZXJTlKZkNDYUxKN2ZUZg=="
+    }
+  },
+  {
+    "id": "kaywon-arts",
+    "name": "계원예술대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KV2FOYjg5SmZDQ2FMSjdmVGY="
+    }
+  },
+  {
+    "id": "guk-je",
+    "name": "국제대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KYC85YWE5SmZDQ2FMSjdmVGY="
+    }
+  },
+  {
+    "id": "daelim",
+    "name": "대림대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTSVDYDhWSmZDQ2FMSjdmVGY="
+    }
+  },
+  {
+    "id": "dongnam-health",
+    "name": "동남보건대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTThXcldhVkpmQ0NhTEo3ZlRm"
+    }
+  },
+  {
+    "id": "dongseoul",
+    "name": "동서울대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOlZKZkNDYUxKN2ZUZg=="
+    }
+  },
+  {
+    "id": "dsam",
+    "name": "동아방송예술대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOE0lVkpmQ0NhTEo3ZlRm"
+    }
+  },
+  {
+    "id": "myongji-college",
+    "name": "명지전문대학",
+    "campus": null,
+    "region": "서울",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTC9NSmZDQ2FMSjdmVGY="
+    }
+  },
+  {
+    "id": "bucheon",
+    "name": "부천대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTEJKZkNDYUxKN2ZUZg="
+    }
+  },
+  {
+    "id": "seoul-women-nursing",
+    "name": "서울여자간호대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTC9XJkpmQ0NhTEo3ZlRm"
+    }
+  },
+  {
+    "id": "suwon-science",
+    "name": "수원과학대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTCYmSmZDQ2FMSjdmVGY="
+    }
+  },
+  {
+    "id": "suwon-women",
+    "name": "수원여자대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTE4mSmZDQ2FMSjdmVGY="
+    }
+  },
+  {
+    "id": "soongeui-women",
+    "name": "숭의여자대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KTE5gJkpmQ0NhTEo3ZlRm"
+    }
+  },
+  {
+    "id": "shingu",
+    "name": "신구대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOnJXJXwmSmZDQ2FMSjdmVGY="
+    }
+  },
+  {
+    "id": "shinansan",
+    "name": "신안산대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KMEw4SmZDQ2FMSjdmVGY="
+    }
+  },
+  {
+    "id": "ansan",
+    "name": "안산대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVzgmVzhKZkNDYUxKN2ZUZg=="
+    }
+  },
+  {
+    "id": "yeonsung",
+    "name": "연성대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5Kclc6JldhYGJKZkNDYUxKN2ZUZg=="
+    }
+  },
+  {
+    "id": "osan",
+    "name": "오산대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVzgmYUpmQ0NhTEo3ZlRm"
+    }
+  },
+  {
+    "id": "yuhan",
+    "name": "유한대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVzh8OmJKZkNDYUxKN2ZUZg=="
+    }
+  },
+  {
+    "id": "induk",
+    "name": "인덕대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KOTpWVyVKZkNDYUxKN2ZUZg=="
+    }
+  },
+  {
+    "id": "jangan",
+    "name": "장안대학교",
+    "campus": null,
+    "region": "경기",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVzhyVzgvSmZDQ2FMSjdmVGY="
+    }
+  },
+  {
+    "id": "hanyang-women",
+    "name": "한양여자대학교",
+    "campus": null,
+    "region": "서울",
+    "type": "전문대",
+    "scraper": "uway_ratio",
+    "params": {
+      "url": "https://ratio.uwayapply.com/Sl5KVzhNYU5ifEpmQ0NhTEo3ZlRm"
+    }
   }
 ]
