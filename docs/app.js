@@ -63,16 +63,19 @@ function buildUniversities() {
         univ_type: r.univ_type,
         source_url: r.source_url,
         deptCount: 0,
-        maxRatio: 0,
+        sumRatio: 0,
         totalApplicants: 0,
         totalCapacity: 0,
       });
     }
     const u = map.get(key);
     u.deptCount += 1;
-    u.maxRatio = Math.max(u.maxRatio, r.ratio);
+    u.sumRatio += r.ratio;
     u.totalApplicants += r.applicants;
     u.totalCapacity += r.capacity;
+  }
+  for (const u of map.values()) {
+    u.avgRatio = u.deptCount ? u.sumRatio / u.deptCount : 0;
   }
   state.universities = Array.from(map.values());
 }
@@ -112,7 +115,7 @@ function sortUniversities(list) {
   const sorted = [...list];
   switch (state.sort) {
     case "ratio-asc":
-      sorted.sort((a, b) => a.maxRatio - b.maxRatio);
+      sorted.sort((a, b) => a.avgRatio - b.avgRatio);
       break;
     case "applicants-desc":
       sorted.sort((a, b) => b.totalApplicants - a.totalApplicants);
@@ -122,7 +125,7 @@ function sortUniversities(list) {
       break;
     case "ratio-desc":
     default:
-      sorted.sort((a, b) => b.maxRatio - a.maxRatio);
+      sorted.sort((a, b) => b.avgRatio - a.avgRatio);
       break;
   }
   return sorted;
@@ -215,7 +218,7 @@ function buildUnivCard(u) {
   card.innerHTML = `
     <div class="univ-card-top">
       <h3>${escapeHtml(u.university)}${u.campus ? `<span class="campus-badge">${escapeHtml(u.campus)}</span>` : ""}</h3>
-      <span class="ratio-cell">${u.maxRatio.toFixed(2)} : 1<small> 최고</small></span>
+      <span class="ratio-cell">${u.avgRatio.toFixed(2)} : 1<small> 평균</small></span>
     </div>
     <div class="univ-card-meta">
       <span>${escapeHtml(u.univ_type || "-")}</span>
