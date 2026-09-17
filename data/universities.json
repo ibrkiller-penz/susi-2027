@@ -7,7 +7,7 @@
     "type": "4년제",
     "scraper": "jinhak_addon",
     "params": {
-      "ratio_id": "10080151"
+      "ratio_id": "10080381"
     }
   },
   {
@@ -720,17 +720,6 @@
     "scraper": "uway_ratio",
     "params": {
       "url": "https://ratio.uwayapply.com/Sl5KV2FOclc4OUpmJSY6Jko3ZlRm"
-    }
-  },
-  {
-    "id": "school-64",
-    "name": "건국대학교(서울)",
-    "campus": null,
-    "region": "서울",
-    "type": "4년제",
-    "scraper": "jinhak_addon",
-    "params": {
-      "ratio_id": "10080381"
     }
   },
   {
@@ -1788,17 +1777,6 @@
     "scraper": "jinhak_addon",
     "params": {
       "ratio_id": "11870871"
-    }
-  },
-  {
-    "id": "school-160",
-    "name": "아신대학교",
-    "campus": null,
-    "region": "경기",
-    "type": "4년제",
-    "scraper": "uway_ratio",
-    "params": {
-      "url": "https://www.acts.ac.kr/admission/design/admission08.asp?&amp;left=occa4&amp;cry=2027&amp;crs=susi&amp;mode=view"
     }
   },
   {
