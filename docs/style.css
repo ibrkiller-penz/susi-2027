@@ -55,6 +55,33 @@ body {
   opacity: 0.75;
 }
 
+.site-nav {
+  display: flex;
+  gap: 4px;
+  padding: 8px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-nav a {
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  background: var(--accent-weak);
+  color: var(--text);
+}
+
+.site-nav a.active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
 .controls {
   display: flex;
   flex-wrap: wrap;
