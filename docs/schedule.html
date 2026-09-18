@@ -6,32 +6,40 @@
 <title>2027 수시 일정표 · 일자별</title>
 <style>
 :root{
-  --ink:#16202e; --ink2:#46566d; --ink3:#7d8b9d;
-  --paper:#f6f5f1; --card:#fff; --line:#e0e2dd; --soft:#eeefec;
+  --ink:#1a1a1a; --ink2:#6b7280; --ink3:#9aa2b1;
+  --paper:#f7f7f8; --card:#fff; --line:#e5e7eb; --soft:#eff6ff;
+  --accent:#2563eb; --header-bg:#111827; --header-text:#ffffff;
   --p:#a15c0a; --pbg:#fdf1de;
   --n:#6a3ea1; --nbg:#f1eafa;
   --i:#0c6a69; --ibg:#e1f2f0;
   --sun:#b3402f; --sat:#2a5aa8;
 }
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#e5e7eb; --ink2:#9ca3af; --ink3:#6b7280;
+    --paper:#0f1115; --card:#171a21; --line:#2a2e37; --soft:#1e293b;
+    --accent:#60a5fa; --header-bg:#0b0d11; --header-text:#f3f4f6;
+  }
+}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  font-family:-apple-system,"Noto Sans KR","Malgun Gothic",sans-serif;
   font-size:15px;line-height:1.5;font-feature-settings:"tnum"}
 
-header.top{background:var(--ink);color:#eef1f5;padding:20px 20px 18px}
+header.top{background:var(--header-bg);color:var(--header-text);padding:20px 20px 18px}
 .wrap{max-width:1160px;margin:0 auto}
 .top h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.02em}
 .top h1 span{color:#ffd98a}
 .top p{margin:6px 0 0;font-size:13px;color:#a7b4c4}
 
-.bar{position:sticky;top:0;z-index:30;background:rgba(246,245,241,.96);
+.bar{position:sticky;top:0;z-index:30;background:color-mix(in srgb, var(--paper) 96%, transparent);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .bar .wrap{padding:11px 20px 9px}
 .r1{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .sb{position:relative;flex:1 1 300px;min-width:200px}
 .sb input{width:100%;padding:10px 34px 10px 13px;font:inherit;border:1.5px solid var(--line);
   border-radius:8px;background:var(--card);color:var(--ink)}
-.sb input:focus{outline:2px solid var(--ink);outline-offset:1px}
+.sb input:focus{outline:2px solid var(--accent);outline-offset:1px}
 .sb button{position:absolute;right:5px;top:50%;transform:translateY(-50%);border:0;background:none;
   cursor:pointer;font-size:17px;color:var(--ink3);padding:3px 7px;border-radius:6px}
 .sb button:hover{background:var(--soft);color:var(--ink)}
@@ -46,8 +54,8 @@ header.top{background:var(--ink);color:#eef1f5;padding:20px 20px 18px}
 .chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
 .chip{font:inherit;font-size:12.5px;padding:4px 10px;border-radius:999px;border:1.5px solid var(--line);
   background:var(--card);color:var(--ink2);cursor:pointer}
-.chip:hover{border-color:var(--ink3)}
-.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
 .chips .sep{width:1px;background:var(--line);margin:2px 4px}
 
 main{max-width:1160px;margin:0 auto;padding:18px 20px 60px}
@@ -60,7 +68,7 @@ main{max-width:1160px;margin:0 auto;padding:18px 20px 60px}
 
 .day{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:9px;
   display:flex;overflow:hidden}
-.dl{flex:0 0 92px;padding:11px 10px 11px 14px;border-right:1px solid var(--soft);background:#fbfbf9}
+.dl{flex:0 0 92px;padding:11px 10px 11px 14px;border-right:1px solid var(--soft);background:var(--soft)}
 .dl .dd{font-size:21px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
 .dl .wd{font-size:12.5px;color:var(--ink3);margin-top:1px}
 .dl .hol{display:inline-block;margin-top:5px;font-size:11px;padding:1px 6px;border-radius:4px;
@@ -94,8 +102,8 @@ details{margin-top:24px;background:var(--card);border:1px solid var(--line);bord
 summary{cursor:pointer;padding:11px 14px;font-weight:700;font-size:14px}
 .ulist{padding:0 14px 14px;display:flex;flex-wrap:wrap;gap:5px}
 .ub{font:inherit;font-size:12.5px;padding:3px 9px;border-radius:999px;border:1px solid var(--line);
-  background:#fbfbf9;color:var(--ink2);cursor:pointer}
-.ub:hover{border-color:var(--ink);color:var(--ink)}
+  background:var(--soft);color:var(--ink2);cursor:pointer}
+.ub:hover{border-color:var(--accent);color:var(--ink)}
 footer{max-width:1160px;margin:0 auto;padding:0 20px 46px;font-size:12.5px;color:var(--ink3);line-height:1.7}
 
 @media(max-width:640px){
@@ -116,7 +124,7 @@ footer{max-width:1160px;margin:0 auto;padding:0 20px 46px;font-size:12.5px;color
 .site-nav{display:flex;gap:4px;padding:8px 16px;background:var(--card);border-bottom:1px solid var(--line)}
 .site-nav a{padding:7px 14px;border-radius:8px;font-size:13px;font-weight:600;color:var(--ink2);text-decoration:none}
 .site-nav a:hover{background:var(--soft);color:var(--ink)}
-.site-nav a.active{background:var(--ink);color:#fff}
+.site-nav a.active{background:var(--accent);color:#fff}
 </style>
 </head>
 <body>
