@@ -6,7 +6,7 @@
 <title>2027 수시 일정표 · 일자별</title>
 <style>
 :root{
-  --ink:#1a1a1a; --ink2:#6b7280; --ink3:#9aa2b1;
+  --ink:#1a1a1a; --ink2:#48505c; --ink3:#707a88;
   --paper:#f7f7f8; --card:#fff; --line:#e5e7eb; --soft:#eff6ff;
   --accent:#2563eb; --header-bg:#111827; --header-text:#ffffff;
   --p:#a15c0a; --pbg:#fdf1de;
@@ -16,9 +16,13 @@
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --ink:#e5e7eb; --ink2:#9ca3af; --ink3:#6b7280;
+    --ink:#e9eaec; --ink2:#aab2bf; --ink3:#8892a0;
     --paper:#0f1115; --card:#171a21; --line:#2a2e37; --soft:#1e293b;
     --accent:#60a5fa; --header-bg:#0b0d11; --header-text:#f3f4f6;
+    --p:#e0a352; --pbg:#3a2c17;
+    --n:#c49bf0; --nbg:#2c2140;
+    --i:#4fd1c5; --ibg:#123531;
+    --sun:#f0776a; --sat:#7db2ff;
   }
 }
 *{box-sizing:border-box}
@@ -73,7 +77,7 @@ main{max-width:1160px;margin:0 auto;padding:18px 20px 60px}
 .dl .wd{font-size:12.5px;color:var(--ink3);margin-top:1px}
 .dl .hol{display:inline-block;margin-top:5px;font-size:11px;padding:1px 6px;border-radius:4px;
   background:#fbe4de;color:#a8331f;font-weight:700}
-.dl .hol.exam{background:var(--ink);color:#ffd98a}
+.dl .hol.exam{background:var(--header-bg);color:#ffd98a}
 .dl .num{font-size:11.5px;color:var(--ink3);margin-top:5px}
 .dl.sun .dd{color:var(--sun)} .dl.sat .dd{color:var(--sat)}
 .dr{flex:1 1 auto;min-width:0;padding:7px 14px 9px}
@@ -91,7 +95,7 @@ li{display:flex;gap:8px;align-items:baseline;padding:2.5px 0;font-size:14px;line
 .g-p .u{color:var(--p)} .g-n .u{color:var(--n)} .g-i .u{color:var(--i)}
 .u:hover{text-decoration:underline}
 .b{flex:1 1 auto;min-width:0}
-mark{background:#ffe07a;color:inherit;padding:0 1px;border-radius:2px}
+mark{background:#ffe07a;color:#1a1a1a;padding:0 1px;border-radius:2px}
 
 .uniview .day{flex-direction:row}
 .empty{text-align:center;padding:56px 20px;color:var(--ink2);background:var(--card);
